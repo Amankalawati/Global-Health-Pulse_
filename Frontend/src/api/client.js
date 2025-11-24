@@ -1,12 +1,13 @@
-// src/api/client.js   ← FINAL VERSION (NO MORE ERRORS)
 import axios from 'axios'
 
+const API_URL = import.meta.env.VITE_API_URL
+
 const client = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: API_URL,
   timeout: 10000,
 })
 
-// Optional: token function (most projects use this)
+// Optional: token function
 export const setToken = (token) => {
   if (token) {
     client.defaults.headers.common['Authorization'] = `Bearer ${token}`
