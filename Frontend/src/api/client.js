@@ -7,7 +7,6 @@ const client = axios.create({
   timeout: 10000,
 })
 
-// Optional: token function
 export const setToken = (token) => {
   if (token) {
     client.defaults.headers.common['Authorization'] = `Bearer ${token}`
